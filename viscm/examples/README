@@ -17,3 +17,12 @@ st-helens_before-modified.txt.gz:
 
   This copy is modified from the version linked above -- it has had
   all -32767 values replaced by NaNs.
+
+datashader_census.npz:
+
+  [Population density for the USA from the 2010 US
+  Census](https://anaconda.org/jbednar/census), rendered using
+  datashader.  Data has been histogram-equalized to ensure that all
+  pixels are equally likely to contain any of the available values,
+  which helps reveal how faithfully these values are converted into
+  visible colors.

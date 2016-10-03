@@ -306,8 +306,14 @@ class viscm(object):
         image_args = []
         example_dir = os.path.join(os.path.dirname(__file__), "examples")
 
-        images.append(np.loadtxt(os.path.join(example_dir,
-                                 "st-helens_before-modified.txt.gz")).T)
+        # Both images are useful, but they can't both easily fit on the page
+        sthelens= np.loadtxt(os.path.join(example_dir,
+                                           "st-helens_before-modified.txt.gz")).T
+
+        census = np.flipud(np.load(os.path.join(example_dir,
+                                           "datashader_census.npz"))["vals"].astype(float))
+        
+        images.append(census)
         image_args.append({})
 
         # Adapted from
